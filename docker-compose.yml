@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   springapp:
-    image: teja2020/spring-boot-mongo:${buildNumber}
+    image: teja2020/spring-boot-mongo:BUILD_NUMBER
     container_name: springappcontainer
     environment:
     - MONGO_DB_HOSTNAME=mongo
