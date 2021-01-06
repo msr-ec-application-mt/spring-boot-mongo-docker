@@ -16,6 +16,7 @@ services:
     - springappnetwork  
   mongo:
     image: mongo
+    container_name: mongodb
     environment:
     - MONGO_INITDB_ROOT_USERNAME=devdb
     - MONGO_INITDB_ROOT_PASSWORD=devdb@123
