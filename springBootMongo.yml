@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: springappcontainer
-        image: teja2020/spring-boot-mongo
+        image: teja2020/springbootmongo
         ports:
         - containerPort: 8080
         env:
@@ -46,12 +46,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: mongodb
+      app: mongo
   template:
      metadata:
        name: mongodbpod
        labels:
-         app: mongodb
+         app: mongo
      spec:
        volumes:
        - name: hostpathvol
@@ -78,7 +78,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: mongodb
+    app: mongo
   ports:
   - port: 27017
     targetPort: 27017
