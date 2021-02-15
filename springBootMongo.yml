@@ -39,7 +39,7 @@ spec:
   type: NodePort
 ---
 # Mongo db pod with volumes(HostPath)
-apiVersion: v1
+apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: mongodbrs
