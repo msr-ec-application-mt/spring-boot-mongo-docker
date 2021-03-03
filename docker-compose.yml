@@ -10,11 +10,11 @@ services:
     - MONGO_DB_USERNAME=devdb
     - MONGO_DB_PASSWORD=devdb@123
     ports:
-      - 8080:8080
+    - 8080:8080
     depends_on:
-      - mongo
+    - mongo
     networks:
-      - springappnetwork
+    - springappnetwork
   mongo:
     image: mongo
     container_name: mongodb
@@ -22,9 +22,9 @@ services:
     - MONGO_INITDB_ROOT_USERNAME=devdb
     - MONGO_INITDB_ROOT_PASSWORD=devdb@123
     volumes:
-      - mongodbvol:/data/db
+    - mongodbvol:/data/db
     networks:
-      - springappnetwork
+    - springappnetwork
 volumes:
   mongodbvol:
     driver: rexray/ebs
