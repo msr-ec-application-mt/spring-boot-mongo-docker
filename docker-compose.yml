@@ -14,8 +14,8 @@ services:
     depends_on:
       - mongo
     networks:
-    - springappnetwork
- mongo:
+      - springappnetwork
+  mongo:
     image: mongo
     container_name: mongodb
     environment:
@@ -24,7 +24,7 @@ services:
     volumes:
       - mongodbvol:/data/db
     networks:
-    - springappnetwork
+      - springappnetwork
 volumes:
   mongodbvol:
     driver: rexray/ebs
