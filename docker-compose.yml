@@ -1,8 +1,9 @@
-version: '3.2'
+
+version: '3.1'
 
 services:
   springapp:
-    image: teja2020/spring-boot-mongo:BUILD_NUMBER
+    image: teja2020/spring-boot-mongo:${buildNumber}
     container_name: springappcontainer
     environment:
     - MONGO_DB_HOSTNAME=mongo
@@ -13,8 +14,8 @@ services:
     depends_on:
       - mongo
     networks:
-    - springappnetwork  
-  mongo:
+    - springappnetwork
+ mongo:
     image: mongo
     container_name: mongodb
     environment:
@@ -23,10 +24,10 @@ services:
     volumes:
       - mongodbvol:/data/db
     networks:
-    - springappnetwork    
+    - springappnetwork
 volumes:
   mongodbvol:
-    driver: local
+    driver: rexray/ebs
 networks:
   springappnetwork:
     driver: bridge
